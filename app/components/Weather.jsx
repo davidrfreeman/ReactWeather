@@ -44,10 +44,10 @@ export default class Weather extends React.Component {
 
     return (
       <div className="row">
-        <div className="small-12">
-          <WeatherForm onSearch={this.handleSearch}/>
-          {renderMessage()}
-        </div>
+          <div className="small-12">
+            <WeatherForm onSearch={this.handleSearch}/>
+            {renderMessage()}
+          </div>
       </div>
     );
   }
