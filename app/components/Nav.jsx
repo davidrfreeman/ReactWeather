@@ -5,7 +5,14 @@ import WeatherForm from 'WeatherForm';
 export default class Nav extends React.Component {
   onSearch(e) {
     e.preventDefault();
-    alert('Net yet wired up');
+
+    let location = this.refs.search.value;
+    let encodedLocation = encodeURIComponent(location);
+
+    if(location.length > 0) {
+      this.refs.search.value = '';
+      window.location.hash = '#/?location=' + encodedLocation;
+    }
   }
 
   render() {
@@ -20,10 +27,10 @@ export default class Nav extends React.Component {
         </ul>
       </div>
       <div className="top-bar-right">
-        <form onSubmit={this.onSearch}>
+        <form onSubmit={this.onSearch.bind(this)}>
         <ul className="menu">
           <li>
-            <input type="search" placeholder="Search Weather by City"/>
+            <input type="search" ref="search" placeholder="Search Weather by City"/>
           </li>
           <li>
             <input type="submit" className="button" value="Get Weather"/>
