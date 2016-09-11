@@ -16,7 +16,7 @@ export default class Nav extends React.Component {
 
     if(location.length > 0) {
       this.refs.search.value = '';
-      window.location.search = '/?location=' + location;
+      window.location.search = 'location=' + location;
     }
   }
 
