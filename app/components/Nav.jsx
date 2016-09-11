@@ -1,8 +1,14 @@
 import React from 'react';
 import {Link, IndexLink} from 'react-router';
 import WeatherForm from 'WeatherForm';
+import openWeatherMap from 'openWeatherMap';
 
 export default class Nav extends React.Component {
+
+  constructor(props) {
+    super(props);
+  }
+
   onSearch(e) {
     e.preventDefault();
 
@@ -11,7 +17,7 @@ export default class Nav extends React.Component {
 
     if(location.length > 0) {
       this.refs.search.value = '';
-      window.location.hash = '#/?location=' + encodedLocation;
+      window.location.search = '/?location=' + location;
     }
   }
 
