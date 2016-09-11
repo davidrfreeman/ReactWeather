@@ -1,7 +1,6 @@
 import React from 'react';
 import {Link, IndexLink} from 'react-router';
 import WeatherForm from 'WeatherForm';
-import openWeatherMap from 'openWeatherMap';
 
 export default class Nav extends React.Component {
 
